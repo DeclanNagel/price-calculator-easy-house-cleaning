@@ -1,0 +1,303 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #dff1f7;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #dff1f7 0%, #d8eef5 100%);
+  padding: 40px 20px;
+}
+
+.calculator-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 700px;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 48px 48px 40px;
+  box-shadow: 0 12px 35px rgba(77, 121, 146, 0.12);
+}
+
+.calculator-card h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #295786;
+  margin-bottom: 32px;
+  letter-spacing: -1px;
+}
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.2rem;
+  color: #295786;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.input-with-unit {
+  display: flex;
+  width: 100%;
+  border: 2px solid #d7e1ea;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.input-with-unit input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 22px 18px;
+  font-size: 1.2rem;
+  color: #4b6480;
+}
+
+.input-with-unit input::placeholder {
+  color: #9aaabd;
+}
+
+.input-with-unit span {
+  min-width: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef3f7;
+  color: #4c6886;
+  font-size: 1.2rem;
+  border-left: 1px solid #d7e1ea;
+}
+
+select {
+  width: 100%;
+  padding: 22px 18px;
+  border-radius: 14px;
+  border: 2px solid #d7e1ea;
+  font-size: 1.2rem;
+  color: #6c8198;
+  background: #fff;
+  outline: none;
+}
+
+.result-row {
+  margin-top: 10px;
+  display: flex;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(66, 126, 168, 0.08);
+}
+
+.price-box {
+  width: 180px;
+  background: #ffffff;
+  color: #3d7dbc;
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #d7e1ea;
+  border-right: none;
+  padding: 20px;
+}
+
+.result-row button {
+  flex: 1;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(180deg, #4a9bd3 0%, #3c8fca 100%);
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 22px;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.result-row button:hover {
+  opacity: 0.95;
+}
+
+.result-row button:active {
+  transform: scale(0.995);
+}
+
+/* background decoration */
+.background-shapes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+}
+
+.shape-top-left {
+  width: 170px;
+  height: 170px;
+  top: -30px;
+  left: -30px;
+}
+
+.shape-right {
+  width: 240px;
+  height: 500px;
+  right: -60px;
+  top: 0;
+  border-radius: 120px;
+}
+
+.shape-bottom-left {
+  width: 180px;
+  height: 180px;
+  bottom: -60px;
+  left: -40px;
+}
+
+.leaf {
+  position: absolute;
+  bottom: 20px;
+  right: 90px;
+  width: 22px;
+  height: 90px;
+  background: #2d7e72;
+  border-radius: 30px;
+  transform-origin: bottom center;
+  opacity: 0.9;
+}
+
+.leaf-1 {
+  right: 80px;
+  height: 120px;
+  transform: rotate(-25deg);
+  background: #1c8f78;
+}
+
+.leaf-2 {
+  right: 125px;
+  height: 85px;
+  transform: rotate(25deg);
+  background: #5f9e78;
+}
+
+.leaf-3 {
+  right: 45px;
+  height: 70px;
+  transform: rotate(40deg);
+  background: #0f6f68;
+}
+
+@media (max-width: 768px) {
+  .calculator-card {
+    padding: 32px 24px;
+  }
+
+  .calculator-card h1 {
+    font-size: 2.2rem;
+  }
+
+  .price-box {
+    width: 140px;
+    font-size: 1.1rem;
+  }
+
+  .result-row button {
+    font-size: 1.4rem;
+  }
+}
+
+.cards-container {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.breakdown-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 12px 35px rgba(77, 121, 146, 0.12);
+  color: #295786;
+}
+
+.breakdown-card h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.breakdown-card p {
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.breakdown-card hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #d7e1ea;
+}
+
+.breakdown-card h2 {
+  color: #295786; /* same blue as your main UI */
+  opacity: 1;     /* override any faded styles */
+}
+
+.tabs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+.tabs button {
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color:grey;
+}
+
+.active-tab {
+  outline: 2px solid #2f5d95;
+}
+
+.input-with-unit input {
+  background: white !important;
+  color: black;
+}
